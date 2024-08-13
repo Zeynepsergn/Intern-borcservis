@@ -19,12 +19,12 @@ public class MukellefKullanici {
 
     @Size(max = 11)
     @NotNull
-    @Column(name = "tc_kn", nullable = false, length = 11)
+    @Column(name = "tckn", nullable = false, length = 11)
     private String tcKn;
 
     @Size(max = 10)
     @NotNull
-    @Column(name = "vergi_kn", nullable = false, length = 10)
+    @Column(name = "vergikn", nullable = false, length = 10)
     private String vergiKn;
 
     @Size(max = 100)

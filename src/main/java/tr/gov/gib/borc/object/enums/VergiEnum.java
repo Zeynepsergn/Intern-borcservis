@@ -1,7 +1,5 @@
 package tr.gov.gib.borc.object.enums;
-
 import lombok.Getter;
-
 import java.util.Hashtable;
 
 @Getter

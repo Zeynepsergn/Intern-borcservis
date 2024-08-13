@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -35,5 +37,18 @@ public class MukellefBorc {
     @NotNull
     @Column(name = "odenen_borc", nullable = false, precision = 12, scale = 2)
     private BigDecimal odenenBorc;
+
+    @Column(name = "kalan_borc", precision = 10, scale = 2)
+    private BigDecimal kalanBorc;
+
+    @Column(name = "borc_durum")
+    private Short borcDurum;
+
+    @Column(name = "ilk_kayit")
+    private Date ilkKayit;
+
+    @Column(name = "optime")
+    private Date optime;
+
 
 }

@@ -35,5 +35,4 @@ public class BorcSorguController {
         GibResponse<List<BorcSorguReponse>> mukellefBorcs = borcSorguService.tumBorcSorgula(request.getData());
         return new ResponseEntity<>(mukellefBorcs, HttpStatus.OK);
     }
-
 }
