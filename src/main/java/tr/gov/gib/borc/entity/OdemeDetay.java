@@ -20,9 +20,9 @@ public class OdemeDetay {
     @Column(name = "odeme_detay_id", nullable = false)
     private Integer id;
 
-    @Size(max = 10)
+    @Size(max = 20)
     @NotNull
-    @Column(name = "oid", nullable = false, length = 10)
+    @Column(name = "oid", nullable = false, length = 20)
     private String oid;
 
     @NotNull
