@@ -20,9 +20,9 @@ configurations {
 
 repositories {
     mavenLocal()
-    flatDir {
-        dirs 'libs'
-    }
+//    flatDir {
+//        dirs 'libs'
+//    }
     mavenCentral()
 }
 

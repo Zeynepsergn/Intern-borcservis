@@ -1,8 +1,8 @@
 package tr.gov.gib.borc.service;
 
-import tr.gov.gib.borc.exception.GibException;
 import tr.gov.gib.borc.object.request.BorcSorguRequest;
 import tr.gov.gib.borc.object.response.BorcSorguReponse;
+import tr.gov.gib.gibcore.exception.GibException;
 import tr.gov.gib.gibcore.object.response.GibResponse;
 
 import java.util.List;

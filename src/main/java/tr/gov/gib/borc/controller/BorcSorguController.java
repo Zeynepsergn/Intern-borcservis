@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tr.gov.gib.borc.object.request.BorcSorguRequest;
 import tr.gov.gib.borc.object.response.BorcSorguReponse;
 import tr.gov.gib.borc.service.BorcSorguService;
+import tr.gov.gib.gibcore.exception.GibExceptionHandler;
 import tr.gov.gib.gibcore.object.response.GibResponse;
 import tr.gov.gib.gibcore.object.reuest.GibRequest;
 
@@ -16,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/borc")
-public class BorcSorguController {
+public class BorcSorguController extends GibExceptionHandler {
 
     private final BorcSorguService borcSorguService;
 

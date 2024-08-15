@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="BorcServis" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="DB_PASS" value="123" />
+      <env name="DB_URL" value="jdbc:postgresql://localhost:5432/PROJE" />
+      <env name="DB_USER" value="postgres" />
+      <env name="PORT" value="7070" />
+      <env name="SWAGGER_DSC" value="Borc service ile ilgili islemleri yapan servistir" />
+      <env name="SWAGGER_EMAIL" value="melih.atalay@gelirler.gov.tr" />
+      <env name="SWAGGER_NAME" value="Melih Atalay" />
+      <env name="SWAGGER_TITLE" value="Borc Service" />
+      <env name="SWAGGER_TOS" value="https://gib.gov.tr" />
+      <env name="SWAGGER_VERSION" value="1.0" />
+    </envs>
+    <module name="BorcServis.main" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="tr.gov.gib.borc.BorcServisApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
