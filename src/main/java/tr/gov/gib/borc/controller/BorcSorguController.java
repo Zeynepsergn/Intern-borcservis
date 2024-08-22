@@ -11,7 +11,7 @@ import tr.gov.gib.borc.object.response.BorcSorguReponse;
 import tr.gov.gib.borc.service.BorcSorguService;
 import tr.gov.gib.gibcore.exception.GibExceptionHandler;
 import tr.gov.gib.gibcore.object.response.GibResponse;
-import tr.gov.gib.gibcore.object.reuest.GibRequest;
+import tr.gov.gib.gibcore.object.request.GibRequest;
 
 import java.util.List;
 

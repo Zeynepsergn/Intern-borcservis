@@ -12,6 +12,7 @@ import tr.gov.gib.borc.repository.MukellefBorcRepository;
 import tr.gov.gib.borc.repository.VergiRepository;
 import tr.gov.gib.borc.service.BorcSorguService;
 import tr.gov.gib.gibcore.exception.GibException;
+import tr.gov.gib.gibcore.object.enums.VergiEnum;
 import tr.gov.gib.gibcore.object.response.GibResponse;
 import tr.gov.gib.gibcore.util.ServiceMessage;
 import java.util.ArrayList;
