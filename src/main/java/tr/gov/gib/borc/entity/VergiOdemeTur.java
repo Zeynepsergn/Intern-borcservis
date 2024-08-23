@@ -1,7 +1,6 @@
 package tr.gov.gib.borc.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,13 +15,11 @@ public class VergiOdemeTur {
     @Column(name = "vergi_tur_id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "vergi_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vergi_id")
     private Vergi vergi;
 
-    @NotNull
-    @Column(name = "vergi_odeme_tur", nullable = false)
-    private Integer vergiOdemeTur;
+    @Column(name = "vergi_odeme_tur")
+    private Short vergiOdemeTur;
 
 }

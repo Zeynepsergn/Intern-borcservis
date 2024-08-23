@@ -1,13 +1,13 @@
 package tr.gov.gib.borc.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,22 +20,18 @@ public class MukellefBorc {
     @Column(name = "mukellef_borc_id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "vergi_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vergi_id")
     private Vergi vergi;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "mukellef_kullanici_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mukellef_kullanici_id")
     private MukellefKullanici mukellefKullanici;
 
-    @NotNull
-    @Column(name = "mukellef_borc", nullable = false, precision = 12, scale = 2)
+    @Column(name = "mukellef_borc", precision = 10, scale = 2)
     private BigDecimal mukellefBorc;
 
-    @NotNull
-    @Column(name = "odenen_borc", nullable = false, precision = 12, scale = 2)
+    @Column(name = "odenen_borc", precision = 10, scale = 2)
     private BigDecimal odenenBorc;
 
     @Column(name = "kalan_borc", precision = 10, scale = 2)
@@ -45,10 +41,12 @@ public class MukellefBorc {
     private Short borcDurum;
 
     @Column(name = "ilk_kayit")
-    private Date ilkKayit;
+    private OffsetDateTime ilkKayit;
 
     @Column(name = "optime")
-    private Date optime;
+    private OffsetDateTime optime;
 
+    @OneToMany(mappedBy = "mukellefBorc")
+    private Set<Odeme> odemes = new LinkedHashSet<>();
 
 }

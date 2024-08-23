@@ -36,7 +36,6 @@ public class BorcSorguServiceImpl implements BorcSorguService {
         for(Vergi vergi : vergiList){
             VergiEnum.vergiPool.put(vergi.getId(), VergiEnum.getOdemeTur(vergi.getId()));
         }
-        LOGGER.info("Vergi pool init edildi.:");
     }
 
     @Override
@@ -77,11 +76,12 @@ public class BorcSorguServiceImpl implements BorcSorguService {
                             .borcId(mukellefBorc.getId())
                             .vergiId(mukellefBorc.getVergi().getId())
                             .vergiAdi(mukellefBorc.getVergi().getVergiAciklama())
-                            .tckn(mukellefBorc.getMukellefKullanici().getTcKn())
+                            .tckn(mukellefBorc.getMukellefKullanici().getTckn())
                             .mukellef(mukellefBorc.getMukellefKullanici().getMukellefAd() + " " + mukellefBorc.getMukellefKullanici().getMukellefSoyad())
                             .borc(mukellefBorc.getMukellefBorc())
                             .odemeTur(VergiEnum.vergiPool.get(mukellefBorc.getVergi().getId()))
                             .odemeTurDsc(VergiEnum.getOdemeTurDsc(mukellefBorc.getVergi().getId()))
+                            .mukellefKullaniciId(mukellefBorc.getMukellefKullanici().getId())
                             .build()
             );
         }

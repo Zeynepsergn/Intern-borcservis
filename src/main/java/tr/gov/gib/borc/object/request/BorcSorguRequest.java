@@ -1,6 +1,5 @@
 package tr.gov.gib.borc.object.request;
 
-import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;

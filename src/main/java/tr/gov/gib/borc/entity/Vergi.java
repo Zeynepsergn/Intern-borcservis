@@ -1,7 +1,9 @@
 package tr.gov.gib.borc.entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,18 +14,14 @@ import lombok.Setter;
 @Table(name = "vergi", schema = "gsths")
 public class Vergi {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vergi_id_gen")
-    @SequenceGenerator(name = "vergi_id_gen", sequenceName = "vergi_vergi_id_seq", allocationSize = 1)
     @Column(name = "vergi_id", nullable = false)
     private Integer id;
 
     @Size(max = 255)
-    @NotNull
-    @Column(name = "vergi_aciklama", nullable = false)
+    @Column(name = "vergi_aciklama")
     private String vergiAciklama;
 
-    @NotNull
-    @Column(name = "vergi_durum", nullable = false)
-    private Integer vergiDurum;
+    @Column(name = "vergi_durum")
+    private Short vergiDurum;
 
 }

@@ -1,11 +1,14 @@
 package tr.gov.gib.borc.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,12 +21,23 @@ public class Odeme {
     @Column(name = "odeme_id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @Column(name = "optime", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mukellef_borc_id")
+    private MukellefBorc mukellefBorc;
+
+    @Column(name = "optime")
     private OffsetDateTime optime;
 
-    @NotNull
-    @Column(name = "odeme_durum", nullable = false)
-    private Integer odemeDurum;
+    @Column(name = "odeme_durum")
+    private Short odemeDurum;
+
+    @Column(name = "vergi_id")
+    private Integer vergiId;
+
+    @Column(name = "mukellef_kullanici_id")
+    private Long mukellefKullaniciId;
+
+    @OneToOne(mappedBy = "odeme")
+    private OdemeDetay odemeDetay;
 
 }

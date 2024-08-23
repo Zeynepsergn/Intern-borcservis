@@ -16,15 +16,15 @@ public interface MukellefBorcRepository extends JpaRepository<MukellefBorc, Inte
         select m from MukellefBorc m 
                  inner join fetch m.vergi v 
                  inner join fetch m.mukellefKullanici k
-                 where v.id= :vergiId and k.tcKn= :tckn
+                 where v.id= :vergiId and k.tckn= :tckn
     """)
     List<MukellefBorc> getMukkellefBorcByVergiTur(@Param("vergiId") Integer vergiId, @Param("tckn")String tckn);
 
     @Query("""
         select m from MukellefBorc m 
-                 inner join fetch m.vergi v 
-                 inner join fetch m.mukellefKullanici k
-                 where k.tcKn= :tckn
+                 join fetch m.vergi v 
+                 join fetch m.mukellefKullanici k
+                 where k.tckn= :tckn
     """)
     List<MukellefBorc> getMukkellefBorcByVergiTur(@Param("tckn")String tckn);
 }

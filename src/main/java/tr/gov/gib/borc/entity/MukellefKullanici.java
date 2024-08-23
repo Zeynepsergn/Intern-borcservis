@@ -1,10 +1,12 @@
 package tr.gov.gib.borc.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,28 +20,29 @@ public class MukellefKullanici {
     private Integer id;
 
     @Size(max = 11)
-    @NotNull
-    @Column(name = "tckn", nullable = false, length = 11)
-    private String tcKn;
+    @Column(name = "tckn", length = 11)
+    private String tckn;
 
     @Size(max = 10)
-    @NotNull
-    @Column(name = "vergikn", nullable = false, length = 10)
-    private String vergiKn;
+    @Column(name = "vkn", length = 10)
+    private String vkn;
 
     @Size(max = 100)
-    @NotNull
-    @Column(name = "mukellef_ad", nullable = false, length = 100)
+    @Column(name = "mukellef_ad", length = 100)
     private String mukellefAd;
 
     @Size(max = 100)
-    @NotNull
-    @Column(name = "mukellef_soyad", nullable = false, length = 100)
+    @Column(name = "mukellef_soyad", length = 100)
     private String mukellefSoyad;
 
     @Size(max = 100)
-    @NotNull
-    @Column(name = "mukellef_unvan", nullable = false, length = 100)
+    @Column(name = "mukellef_unvan", length = 100)
     private String mukellefUnvan;
+
+    @OneToMany(mappedBy = "mukellefKullanici")
+    private Set<MukellefBorc> mukellefBorcs = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "mukellefKullanici")
+    private Set<OdemeDetay> odemeDetays = new LinkedHashSet<>();
 
 }

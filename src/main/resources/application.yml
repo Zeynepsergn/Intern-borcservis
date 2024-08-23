@@ -2,6 +2,21 @@ server:
   port: ${PORT}
 
 spring:
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
+    client:
+      exchange: ${RABBITMQ_EXCHANGE}
+      routing: ${RABBITMQ_ROUTING}
+    listener:
+      queue: ${RBT_QUEUE}
+      count: ${CONSUMER_COUNT}
+      simple:
+        retry:
+          enabled: ${RBT_RETRY_ENABLED}
+        prefetch: ${RBT_PREFETCH}
   application:
     name: BorcServis
   datasource:
@@ -17,6 +32,9 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     open-in-view: false
+    properties:
+      hibernate:
+        default_schema: ${DB_SCHEMA}
 
 swagger:
   info:

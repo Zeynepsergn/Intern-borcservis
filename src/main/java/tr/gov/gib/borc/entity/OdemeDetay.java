@@ -1,7 +1,6 @@
 package tr.gov.gib.borc.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,35 +19,36 @@ public class OdemeDetay {
     @Column(name = "odeme_detay_id", nullable = false)
     private Integer id;
 
-    @Size(max = 20)
-    @NotNull
-    @Column(name = "oid", nullable = false, length = 20)
-    private String oid;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "odeme_id", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "odeme_id")
     private Odeme odeme;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "vergi_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "mukellef_kullanici_id")
+    private MukellefKullanici mukellefKullanici;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vergi_id")
     private Vergi vergi;
 
-    @NotNull
-    @Column(name = "odenen_borc_miktari", nullable = false, precision = 12, scale = 2)
+    @Size(max = 20)
+    @Column(name = "oid", length = 20)
+    private String oid;
+
+    @Size(max = 100)
+    @Column(name = "aciklama", length = 100)
+    private String aciklama;
+
+    @Column(name = "odenen_borc_miktari")
     private BigDecimal odenenBorcMiktari;
 
-    @NotNull
-    @Column(name = "odeme_detay_durum", nullable = false)
-    private Integer odemeDetayDurum;
+    @Column(name = "odeme_detay_durum")
+    private Short odemeDetayDurum;
 
-    @NotNull
-    @Column(name = "iade_zamani", nullable = false)
+    @Column(name = "iade_zamani")
     private OffsetDateTime iadeZamani;
 
-    @NotNull
-    @Column(name = "optime", nullable = false)
+    @Column(name = "optime")
     private OffsetDateTime optime;
 
 }
