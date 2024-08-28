@@ -1,18 +1,29 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="BorcServis" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <envs>
-      <env name="DB_PASS" value="123" />
-      <env name="DB_URL" value="jdbc:postgresql://localhost:5432/PROJE" />
+      <env name="DB_URL" value="jdbc:postgresql://localhost:5432/gib_staj" />
       <env name="DB_USER" value="postgres" />
-      <env name="PORT" value="7070" />
-      <env name="SWAGGER_DSC" value="Borc service ile ilgili islemleri yapan servistir" />
-      <env name="SWAGGER_EMAIL" value="melih.atalay@gelirler.gov.tr" />
-      <env name="SWAGGER_NAME" value="Melih Atalay" />
+      <env name="DB_PASS" value="123" />
+      <env name="DB_SCHEMA" value="gsths" />
+      <env name="PORT" value="7000" />
       <env name="SWAGGER_TITLE" value="Borc Service" />
-      <env name="SWAGGER_TOS" value="https://gib.gov.tr" />
       <env name="SWAGGER_VERSION" value="1.0" />
+      <env name="SWAGGER_DSC" value="Borc service ile ilgili islemleri yapan servistir" />
+      <env name="SWAGGER_TOS" value="https://gib.gov.tr" />
+      <env name="SWAGGER_NAME" value="Melih Atalay" />
+      <env name="SWAGGER_EMAIL" value="melih.atalay@gelirler.gov.tr" />
+      <env name="RABBITMQ_HOST" value="localhost" />
+      <env name="RABBITMQ_PORT" value="5672" />
+      <env name="RABBITMQ_USER" value="guest" />
+      <env name="RABBITMQ_PASS" value="guest" />
+      <env name="RABBITMQ_EXCHANGE" value="tahsilat.exchange" />
+      <env name="RABBITMQ_ROUTING" value="odemerk.*" />
+      <env name="RBT_QUEUE" value="odemequeue" />
+      <env name="CONSUMER_COUNT" value="3" />
+      <env name="RBT_RETRY_ENABLED" value="false" />
+      <env name="RBT_PREFETCH" value="1" />
     </envs>
-    <module name="BorcServis.main" />
+    <module name="borc-service.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="tr.gov.gib.borc.BorcServisApplication" />
     <method v="2">
       <option name="Make" enabled="true" />

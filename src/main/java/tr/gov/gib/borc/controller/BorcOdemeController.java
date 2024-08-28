@@ -15,7 +15,6 @@ import tr.gov.gib.gibcore.object.response.GibResponse;
 import java.util.List;
 
 @RestController
-@RequestMapping("/borc")
 public class BorcOdemeController {
 
     private final BorcOdemeService borcOdemeService;
